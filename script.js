@@ -28,70 +28,43 @@ const queueList = document.querySelector("#queue-list");
 const youtubeLink = document.querySelector("#youtube-link");
 const themeToggle = document.querySelector("#theme-toggle");
 const themeToggleLabel = document.querySelector("#theme-toggle-label");
-const liquidDisplacement = document.querySelector("#liquid-displacement");
-const liquidNoise = document.querySelector("#liquid-noise");
-const fluidTargets = document.querySelectorAll(".fluid-reactive");
-const sceneLens = document.querySelector(".scene-lens");
+const sceneImages = document.querySelectorAll(".scene-image");
+const intro = document.querySelector(".intro");
+const siteHeader = document.querySelector(".site-header");
+const playerMain = document.querySelector(".player-main");
+const collaboration = document.querySelector(".collaboration");
+const ambientLight = document.querySelector(".ambient-light");
 
-if (liquidDisplacement && liquidNoise && window.matchMedia("(pointer: fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const motion = { x: window.innerWidth / 2, y: window.innerHeight / 2, targetX: window.innerWidth / 2, targetY: window.innerHeight / 2, lastX: window.innerWidth / 2, lastY: window.innerHeight / 2 };
-  let fluidFrame;
-  let active = false;
+if (window.Motion && window.matchMedia("(pointer: fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const { animate } = Motion;
+  const spring = { type: "spring", stiffness: 115, damping: 22, mass: 0.65 };
+  let pointerX = window.innerWidth / 2;
+  let pointerY = window.innerHeight / 2;
+  let motionFrame;
 
-  const distanceTo = (rect, x, y) => {
-    const offsetX = Math.max(rect.left - x, 0, x - rect.right);
-    const offsetY = Math.max(rect.top - y, 0, y - rect.bottom);
-    return Math.hypot(offsetX, offsetY);
-  };
-
-  const renderFluid = (time) => {
-    if (!active) return;
-    motion.lastX = motion.x;
-    motion.lastY = motion.y;
-    motion.x += (motion.targetX - motion.x) * 0.24;
-    motion.y += (motion.targetY - motion.y) * 0.24;
-    const velocityX = motion.x - motion.lastX;
-    const velocityY = motion.y - motion.lastY;
-    const speed = Math.hypot(velocityX, velocityY);
-    const strength = 18 + Math.min(speed * 4, 50);
-    liquidDisplacement.setAttribute("scale", strength.toFixed(1));
-    liquidNoise.setAttribute("baseFrequency", `${(0.007 + Math.sin(time * 0.001) * 0.002).toFixed(3)} ${(0.014 + Math.cos(time * 0.0013) * 0.003).toFixed(3)}`);
-    sceneLens.style.setProperty("--fluid-x", `${motion.x}px`);
-    sceneLens.style.setProperty("--fluid-y", `${motion.y}px`);
-    sceneLens.classList.add("is-visible");
-    fluidTargets.forEach((target) => {
-      const distance = distanceTo(target.getBoundingClientRect(), motion.x, motion.y);
-      const impact = target.classList.contains("scene-lens-art") ? 1 : Math.max(0, 1 - distance / 360);
-      target.classList.toggle("is-fluid-reactive", impact > 0.02);
-      target.style.setProperty("--fluid-shift-x", `${(velocityX * impact * 0.45).toFixed(2)}px`);
-      target.style.setProperty("--fluid-shift-y", `${(velocityY * impact * 0.45).toFixed(2)}px`);
-    });
-    fluidFrame = window.requestAnimationFrame(renderFluid);
+  const moveLayers = () => {
+    const horizontal = pointerX / window.innerWidth * 2 - 1;
+    const vertical = pointerY / window.innerHeight * 2 - 1;
+    animate(sceneImages, { x: -horizontal * 14, y: -vertical * 9, scale: 1.035 }, spring);
+    animate(siteHeader, { x: horizontal * 4, y: vertical * 2 }, spring);
+    animate(intro, { x: horizontal * 9, y: vertical * 6 }, spring);
+    animate(playerMain, { x: -horizontal * 4, y: -vertical * 2 }, spring);
+    animate(collaboration, { x: -horizontal * 7, y: -vertical * 4 }, spring);
+    animate(ambientLight, { x: pointerX, y: pointerY, opacity: 0.72 }, { duration: 0.35, ease: "easeOut" });
+    motionFrame = undefined;
   };
 
   window.addEventListener("pointermove", (event) => {
-    motion.targetX = event.clientX;
-    motion.targetY = event.clientY;
-    active = true;
-    if (!fluidFrame) fluidFrame = window.requestAnimationFrame(renderFluid);
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    if (!motionFrame) motionFrame = window.requestAnimationFrame(moveLayers);
   });
-  window.addEventListener("blur", () => {
-    active = false;
-    window.cancelAnimationFrame(fluidFrame);
-    fluidFrame = undefined;
-    liquidDisplacement.setAttribute("scale", "0");
-    fluidTargets.forEach((target) => target.classList.remove("is-fluid-reactive"));
-    sceneLens.classList.remove("is-visible");
-  });
+
   document.addEventListener("mouseout", (event) => {
-    if (!event.relatedTarget) {
-      active = false;
-      window.cancelAnimationFrame(fluidFrame);
-      fluidFrame = undefined;
-      liquidDisplacement.setAttribute("scale", "0");
-      fluidTargets.forEach((target) => target.classList.remove("is-fluid-reactive"));
-      sceneLens.classList.remove("is-visible");
-    }
+    if (event.relatedTarget) return;
+    animate(sceneImages, { x: 0, y: 0, scale: 1.02 }, spring);
+    animate([siteHeader, intro, playerMain, collaboration], { x: 0, y: 0 }, spring);
+    animate(ambientLight, { opacity: 0 }, { duration: 0.3 });
   });
 }
 

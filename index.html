@@ -9,27 +9,16 @@
   </head>
   <body data-theme="light">
     <a class="skip-link" href="#player-panel">Skip to player</a>
-    <svg class="fluid-filter-defs" aria-hidden="true">
-      <filter id="liquid-distortion" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
-        <feTurbulence id="liquid-noise" type="fractalNoise" baseFrequency="0.009 0.016" numOctaves="2" seed="7" result="noise" />
-        <feDisplacementMap id="liquid-displacement" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" />
-      </filter>
-    </svg>
     <div class="scene">
       <div class="scene-art">
         <img class="scene-image scene-image-dark" src="jatin-dark.png" alt="" />
         <img class="scene-image scene-image-light" src="jatin.png" alt="" />
       </div>
-      <div class="scene-lens" aria-hidden="true">
-        <div class="scene-art scene-lens-art fluid-reactive">
-          <img class="scene-image scene-image-dark" src="jatin-dark.png" alt="" />
-          <img class="scene-image scene-image-light" src="jatin.png" alt="" />
-        </div>
-      </div>
+      <div class="ambient-light" aria-hidden="true"></div>
     </div>
     <div class="grain" aria-hidden="true"></div>
 
-    <header class="site-header fluid-reactive">
+    <header class="site-header">
       <a class="wordmark" href="/" aria-label="Jatin's Jukebox home">JATIN<span>///</span></a>
       <div class="header-controls">
         <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="true">
@@ -40,13 +29,13 @@
     </header>
 
     <main>
-      <section class="intro fluid-reactive" aria-labelledby="page-title">
+      <section class="intro" aria-labelledby="page-title">
         <p class="eyebrow">Side A / five late-night songs</p>
         <h1 id="page-title">Jatin's<br /><em>jukebox.</em></h1>
         <p>Put the needle down. The night can wait.</p>
       </section>
 
-      <section class="player-panel fluid-reactive" id="player-panel" aria-labelledby="track-title">
+      <section class="player-panel" id="player-panel" aria-labelledby="track-title">
         <div class="player-main">
           <div class="record-visualizer">
             <div class="audio-waveform" aria-hidden="true">
@@ -85,7 +74,7 @@
         </div>
       </section>
 
-      <section class="collaboration fluid-reactive" aria-labelledby="collaboration-title">
+      <section class="collaboration" aria-labelledby="collaboration-title">
         <p class="eyebrow">Open channel</p>
         <h2 id="collaboration-title">Reach out for<br /><em>collaboration.</em></h2>
         <div class="collaboration-links">
@@ -106,6 +95,7 @@
       <div id="youtube-preloader"></div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
   </body>
