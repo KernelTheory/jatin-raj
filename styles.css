@@ -61,19 +61,8 @@ h1 em { color: var(--amber); font-weight: 400; }
 .record-label { position: relative; display: grid; width: 2.6rem; aspect-ratio: 1; place-items: center; overflow: hidden; border: 1px solid var(--amber); border-radius: 50%; background: #24130c; }
 .record-label img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.84; }
 .record-label span { position: relative; color: #fff8df; font-family: var(--display); font-size: 0.32rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1.05; text-align: center; text-shadow: 0 1px 2px #120804; }
-.audio-waveform { position: absolute; z-index: 0; top: 50%; left: 100%; display: flex; width: 12rem; height: 2.6rem; align-items: center; justify-content: space-between; opacity: 0; pointer-events: none; transform: translate(-18%, -50%); transition: opacity 240ms ease; }
-.waveform-bar { width: 0.18rem; height: 0.5rem; border-radius: 999px; background: #fff0c5; box-shadow: 0 0 0.65rem rgb(247 189 70 / 0.9); opacity: 0.65; transform: scaleY(0.35); transform-origin: center; }
-.waveform-bar:nth-child(2), .waveform-bar:nth-child(8) { height: 1rem; }
-.waveform-bar:nth-child(3), .waveform-bar:nth-child(7) { height: 1.65rem; }
-.waveform-bar:nth-child(4), .waveform-bar:nth-child(6) { height: 2.2rem; }
-.waveform-bar:nth-child(5) { height: 2.5rem; }
-.player-panel.is-playing .audio-waveform { opacity: 1; }
-.player-panel.is-playing .waveform-bar { animation: waveform-pulse 0.9s ease-in-out infinite; }
-.waveform-bar:nth-child(2), .waveform-bar:nth-child(8) { animation-delay: -0.12s; }
-.waveform-bar:nth-child(3), .waveform-bar:nth-child(7) { animation-delay: -0.26s; }
-.waveform-bar:nth-child(4), .waveform-bar:nth-child(6) { animation-delay: -0.38s; }
-.waveform-bar:nth-child(5) { animation-delay: -0.5s; }
-@keyframes waveform-pulse { 0%, 100% { opacity: 0.38; transform: scaleY(0.32); } 50% { opacity: 1; transform: scaleY(1); } }
+.audio-waveform { position: absolute; z-index: 0; top: 50%; left: 50%; width: 8.5rem; height: 8.5rem; opacity: 0; pointer-events: none; transform: translate(-50%, -50%); transition: opacity 240ms ease; }
+.player-panel.is-playing .audio-waveform { opacity: 0.82; }
 .player-panel.is-playing .record { animation: record-spin 1.8s linear infinite; }
 @keyframes record-spin { to { transform: rotate(360deg); } }
 .track-details, .transport { position: relative; z-index: 1; }
@@ -146,7 +135,7 @@ body[data-theme="light"] .play-button { color: #2b1608; background: #ffe08a; }
   .player-panel { bottom: 1rem; width: calc(100% - 1.75rem); }
   .player-main { grid-template-columns: 4rem 1fr auto; gap: 0.65rem; padding: 0.65rem 0.75rem 0.65rem 0.65rem; }
   .record-visualizer, .record { width: 4rem; height: 4rem; }
-  .audio-waveform { width: 7rem; height: 2rem; }
+  .audio-waveform { width: 7rem; height: 7rem; }
   .record-label { width: 2.15rem; }
   .record-label span { font-size: 0.28rem; }
   .track-details .eyebrow { display: none; }
@@ -172,4 +161,4 @@ body[data-theme="light"] .play-button { color: #2b1608; background: #ffe08a; }
   .collaboration h2 em::before { content: " "; }
 }
 
-@media (prefers-reduced-motion: reduce) { .play-button, .scene-image, body, .wordmark, .site-header p, .intro > p:last-child, .theme-toggle, .player-panel, .record, .record-label span, .track-details .eyebrow span, h1, h1 em, h2, .artist, .time, .icon-button, .queue-track, .queue-track img, .queue-track span, .collaboration-link svg, .audio-waveform { transition: none; } .ambient-light { display: none; } .player-panel.is-playing .record, .player-panel.is-playing .waveform-bar { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .play-button, .scene-image, body, .wordmark, .site-header p, .intro > p:last-child, .theme-toggle, .player-panel, .record, .record-label span, .track-details .eyebrow span, h1, h1 em, h2, .artist, .time, .icon-button, .queue-track, .queue-track img, .queue-track span, .collaboration-link svg, .audio-waveform { transition: none; } .ambient-light { display: none; } .player-panel.is-playing .record { animation: none; } }

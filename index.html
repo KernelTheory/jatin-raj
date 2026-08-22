@@ -38,9 +38,7 @@
       <section class="player-panel" id="player-panel" aria-labelledby="track-title">
         <div class="player-main">
           <div class="record-visualizer">
-            <div class="audio-waveform" aria-hidden="true">
-              <span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span>
-            </div>
+            <dotlottie-player id="sound-wave" class="audio-waveform" src="sound%20wave.lottie" background="transparent" speed="1" loop aria-hidden="true"></dotlottie-player>
             <button class="record" id="record-toggle" type="button" aria-expanded="false" aria-controls="playlist-panel" aria-label="Show playlist">
               <span class="record-label">
                 <img id="record-cover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=240&q=80" alt="" />
@@ -96,6 +94,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+    <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
   </body>

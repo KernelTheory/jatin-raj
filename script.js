@@ -23,6 +23,7 @@ const playToggle = document.querySelector("#play-toggle");
 const playerPanel = document.querySelector("#player-panel");
 const recordToggle = document.querySelector("#record-toggle");
 const recordCover = document.querySelector("#record-cover");
+const soundWave = document.querySelector("#sound-wave");
 const playlistPanel = document.querySelector("#playlist-panel");
 const queueList = document.querySelector("#queue-list");
 const youtubeLink = document.querySelector("#youtube-link");
@@ -116,6 +117,8 @@ function setPlaying(isPlaying) {
   playToggle.querySelector("span").textContent = isPlaying ? "❚❚" : "▶";
   playToggle.setAttribute("aria-label", `${isPlaying ? "Pause" : "Play"} ${songs[currentIndex].title}`);
   playerPanel.classList.toggle("is-playing", isPlaying);
+  if (isPlaying) soundWave?.play?.();
+  else soundWave?.pause?.();
   window.clearInterval(progressTimer);
   if (isPlaying) {
     progressTimer = window.setInterval(updateProgress, 500);
