@@ -135,8 +135,8 @@ body[data-theme="light"] .audio-waveform { filter: sepia(0.95) saturate(5) hue-r
   main { min-height: calc(100svh - 3.75rem); padding-top: 3.5rem; }
   .intro { margin-inline: auto; text-align: center; }
   .intro > p:last-child { margin-inline: auto; }
-  .header-controls { display: contents; }
-  .theme-toggle { position: absolute; top: 0; left: 50%; display: inline-flex; align-items: center; justify-content: center; padding-inline: 0.5rem; transform: translateX(-50%); }
+  .header-controls { gap: 0.55rem; }
+  .theme-toggle { display: inline-flex; align-items: center; justify-content: center; padding-inline: 0.5rem; }
   main { padding-bottom: 1rem; }
   .mobile-player-stack { display: grid; gap: 0.5rem; margin-top: auto; }
   .mobile-social-links { display: flex; justify-content: center; gap: 0.7rem; pointer-events: auto; }
