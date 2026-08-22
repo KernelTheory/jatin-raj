@@ -61,7 +61,7 @@ h1 em { color: var(--amber); font-weight: 400; }
 .record-label { position: relative; display: grid; width: 2.6rem; aspect-ratio: 1; place-items: center; overflow: hidden; border: 1px solid var(--amber); border-radius: 50%; background: #24130c; }
 .record-label img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.84; }
 .record-label span { position: relative; color: #fff8df; font-family: var(--display); font-size: 0.32rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1.05; text-align: center; text-shadow: 0 1px 2px #120804; }
-.audio-waveform { position: absolute; z-index: 0; top: 50%; left: 50%; width: 8.5rem; height: 8.5rem; opacity: 0; pointer-events: none; transform: translate(-50%, -50%); transition: opacity 240ms ease; }
+.audio-waveform { position: absolute; z-index: 0; top: 50%; left: 50%; width: 6rem; height: 6rem; opacity: 0; pointer-events: none; transform: translate(-50%, -50%); transition: opacity 240ms ease; }
 .player-panel.is-playing .audio-waveform { opacity: 0.82; }
 .player-panel.is-playing .record { animation: record-spin 1.8s linear infinite; }
 @keyframes record-spin { to { transform: rotate(360deg); } }
@@ -135,7 +135,7 @@ body[data-theme="light"] .play-button { color: #2b1608; background: #ffe08a; }
   .player-panel { bottom: 1rem; width: calc(100% - 1.75rem); }
   .player-main { grid-template-columns: 4rem 1fr auto; gap: 0.65rem; padding: 0.65rem 0.75rem 0.65rem 0.65rem; }
   .record-visualizer, .record { width: 4rem; height: 4rem; }
-  .audio-waveform { width: 7rem; height: 7rem; }
+  .audio-waveform { width: 4.75rem; height: 4.75rem; }
   .record-label { width: 2.15rem; }
   .record-label span { font-size: 0.28rem; }
   .track-details .eyebrow { display: none; }
