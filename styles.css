@@ -135,8 +135,8 @@ body[data-theme="light"] .audio-waveform { filter: sepia(0.95) saturate(5) hue-r
   .intro > p:last-child { margin-inline: auto; }
   .header-controls { gap: 0.55rem; }
   .theme-toggle { padding-inline: 0.5rem; }
-  main { padding-bottom: 7rem; }
-  .player-panel { position: static; width: calc(100% - 1.75rem); margin: 3rem auto 0; transform: none; }
+  main { padding-bottom: 2rem; }
+  .player-panel { position: static; width: calc(100% - 1.75rem); margin-top: auto; margin-inline: auto; transform: none; }
   .player-main { grid-template-columns: 4rem 1fr auto; gap: 0.65rem; padding: 0.65rem 0.75rem 0.65rem 0.65rem; }
   .record-visualizer, .record { width: 4rem; height: 4rem; }
   .audio-waveform { width: 4.75rem; height: 4.75rem; }
@@ -150,7 +150,7 @@ body[data-theme="light"] .audio-waveform { filter: sepia(0.95) saturate(5) hue-r
   .play-button { width: 2.45rem; height: 2.45rem; font-size: 0.85rem; }
   .queue-list { grid-template-columns: repeat(5, 4.3rem); overflow-x: auto; padding-bottom: 0.25rem; }
   .queue { padding-inline: 0.85rem; }
-  .collaboration { position: static; width: auto; height: auto; max-width: 250px; margin: 3rem auto 0; padding: 0.9rem; }
+  .collaboration { position: static; width: auto; height: auto; max-width: 250px; margin: 2rem auto 0; padding: 0.9rem; }
   .collaboration h2 { white-space: normal; }
   .collaboration h2 br { display: initial; }
 }
