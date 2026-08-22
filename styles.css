@@ -61,7 +61,7 @@ h1 em { color: var(--amber); font-weight: 400; }
 .record-label { position: relative; display: grid; width: 2.6rem; aspect-ratio: 1; place-items: center; overflow: hidden; border: 1px solid var(--amber); border-radius: 50%; background: #24130c; }
 .record-label img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.84; }
 .record-label span { position: relative; color: #fff8df; font-family: var(--display); font-size: 0.32rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1.05; text-align: center; text-shadow: 0 1px 2px #120804; }
-.audio-waveform { position: absolute; z-index: 0; top: 50%; left: 50%; width: 6rem; height: 6rem; opacity: 0; pointer-events: none; transform: translate(-50%, -50%); transition: opacity 240ms ease; }
+.audio-waveform { position: absolute; z-index: 0; top: 50%; left: 50%; width: 6rem; height: 6rem; opacity: 0; pointer-events: none; transform: translate(-50%, -50%); filter: sepia(1) saturate(4) hue-rotate(345deg) brightness(1.08) drop-shadow(0 0 0.35rem rgb(247 189 70 / 0.42)); transition: opacity 240ms ease; }
 .player-panel.is-playing .audio-waveform { opacity: 0.82; }
 .player-panel.is-playing .record { animation: record-spin 1.8s linear infinite; }
 @keyframes record-spin { to { transform: rotate(360deg); } }
@@ -124,6 +124,7 @@ body[data-theme="light"] .player-panel .track-details .eyebrow { color: #ffd266;
 body[data-theme="light"] .player-panel h2 { color: #fff9e6; text-shadow: 0 1px 4px rgb(24 11 2 / 0.9); }
 body[data-theme="light"] .theme-toggle { color: #fff6d7; background: rgb(20 10 2 / 0.24); border-color: rgb(255 244 208 / 0.58); box-shadow: none; text-shadow: 0 1px 4px rgb(20 9 1 / 0.9); }
 body[data-theme="light"] .play-button { color: #2b1608; background: #ffe08a; }
+body[data-theme="light"] .audio-waveform { filter: sepia(0.95) saturate(5) hue-rotate(352deg) brightness(0.82) drop-shadow(0 0 0.35rem rgb(167 69 10 / 0.35)); }
 
 @media (max-width: 760px) {
   body { overflow-x: hidden; }
