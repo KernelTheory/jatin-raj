@@ -108,14 +108,14 @@ input[type="range"]:disabled { cursor: wait; opacity: 0.55; }
 .queue-track:hover img, .queue-track:focus-visible img, .queue-track.is-current img { filter: saturate(1); opacity: 1; transform: translateY(-0.12rem); }
 #youtube-link { color: var(--cream); font-size: 0.58rem; font-weight: 800; letter-spacing: 0.1em; text-decoration-color: var(--amber); text-underline-offset: 0.35rem; text-transform: uppercase; }
 
-.collaboration { position: fixed; z-index: 3; right: max(1.5rem, calc(50% - 620px)); bottom: clamp(1rem, 6vh, 5rem); width: min(300px, calc(50% - 340px)); height: 6.5rem; border-radius: 1rem; padding: 0.65rem 0.8rem; will-change: transform; }
+.collaboration { position: fixed; z-index: 3; right: max(1rem, calc(50% - 680px)); bottom: clamp(1rem, 6vh, 5rem); display: flex; width: min(300px, calc(50% - 340px)); height: 6.5rem; flex-direction: column; justify-content: flex-end; border-radius: 1rem; padding: 0.65rem 0.8rem; will-change: transform; }
 .collaboration .eyebrow { margin-bottom: 0.2rem; color: #ffd66f; font-size: 0.5rem; text-shadow: none; }
 .collaboration h2 { overflow: visible; margin-bottom: 0.45rem; color: #fff8df; font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1; text-overflow: clip; text-shadow: 0 2px 8px #120804; white-space: nowrap; }
 .collaboration h2 br { display: none; }
 .collaboration h2 em { color: #ffd66f; font-family: var(--display); font-weight: 400; }
 .collaboration-links { display: flex; flex-wrap: wrap; gap: 0.55rem; }
 .collaboration-link { display: inline-flex; align-items: center; gap: 0.3rem; color: #fff8df; font-size: 0.48rem; font-weight: 800; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
-.collaboration-link svg { width: 1rem; height: 1rem; flex: 0 0 auto; transition: transform 180ms ease; }
+.collaboration-link svg { width: 1.5rem; height: 1.5rem; flex: 0 0 auto; transition: transform 180ms ease; }
 .collaboration-link:hover svg, .collaboration-link:focus-visible svg { transform: translateY(-0.14rem) scale(1.08); }
 .collaboration-link:focus-visible { outline: 2px solid #ffd66f; outline-offset: 0.25rem; }
 
