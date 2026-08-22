@@ -190,11 +190,19 @@ playToggle.addEventListener("click", () => {
   }
 });
 
-recordToggle.addEventListener("click", () => {
-  const isOpen = playerPanel.classList.toggle("is-queue-open");
+function setPlaylistOpen(isOpen) {
+  playerPanel.classList.toggle("is-queue-open", isOpen);
   recordToggle.setAttribute("aria-expanded", String(isOpen));
   recordToggle.setAttribute("aria-label", `${isOpen ? "Hide" : "Show"} playlist`);
   playlistPanel.setAttribute("aria-hidden", String(!isOpen));
+}
+
+recordToggle.addEventListener("click", () => {
+  setPlaylistOpen(!playerPanel.classList.contains("is-queue-open"));
+});
+
+document.addEventListener("click", (event) => {
+  if (!playerPanel.contains(event.target)) setPlaylistOpen(false);
 });
 
 document.querySelector("#previous").addEventListener("click", () => loadSong(currentIndex - 1));
