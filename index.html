@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jatin's private after-hours listening room." />
+    <title>Jatin's Jukebox</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="light">
+    <a class="skip-link" href="#player-panel">Skip to player</a>
+    <svg class="fluid-filter-defs" aria-hidden="true">
+      <filter id="liquid-distortion" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+        <feTurbulence id="liquid-noise" type="fractalNoise" baseFrequency="0.009 0.016" numOctaves="2" seed="7" result="noise" />
+        <feDisplacementMap id="liquid-displacement" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </svg>
+    <div class="scene">
+      <div class="scene-art">
+        <img class="scene-image scene-image-dark" src="jatin-dark.png" alt="" />
+        <img class="scene-image scene-image-light" src="jatin.png" alt="" />
+      </div>
+      <div class="scene-lens" aria-hidden="true">
+        <div class="scene-art scene-lens-art fluid-reactive">
+          <img class="scene-image scene-image-dark" src="jatin-dark.png" alt="" />
+          <img class="scene-image scene-image-light" src="jatin.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header fluid-reactive">
+      <a class="wordmark" href="/" aria-label="Jatin's Jukebox home">JATIN<span>///</span></a>
+      <div class="header-controls">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="true">
+          <span aria-hidden="true">◐</span><span id="theme-toggle-label">Dark mode</span>
+        </button>
+        <p>After-hours<br />listening room</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro fluid-reactive" aria-labelledby="page-title">
+        <p class="eyebrow">Side A / five late-night songs</p>
+        <h1 id="page-title">Jatin's<br /><em>jukebox.</em></h1>
+        <p>Put the needle down. The night can wait.</p>
+      </section>
+
+      <section class="player-panel fluid-reactive" id="player-panel" aria-labelledby="track-title">
+        <div class="player-main">
+          <div class="record-visualizer">
+            <div class="audio-waveform" aria-hidden="true">
+              <span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span><span class="waveform-bar"></span>
+            </div>
+            <button class="record" id="record-toggle" type="button" aria-expanded="false" aria-controls="playlist-panel" aria-label="Show playlist">
+              <span class="record-label">
+                <img id="record-cover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=240&q=80" alt="" />
+                <span>JATIN<br />SELECTS</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="track-details">
+            <p class="eyebrow">Now playing <span id="track-count">01 / 05</span></p>
+            <h2 id="track-title">Andheri Si</h2>
+            <p class="artist">YouTube Music</p>
+            <label class="progress-label" for="progress">Song progress</label>
+            <input id="progress" type="range" min="0" max="0" value="0" step="1" disabled />
+            <p class="time"><span id="elapsed">0:00</span><span id="duration">--:--</span></p>
+          </div>
+
+          <div class="transport" aria-label="Playback controls">
+            <button class="icon-button" id="previous" type="button" aria-label="Previous song">↞</button>
+            <button class="play-button" id="play-toggle" type="button" aria-label="Play Andheri Si" disabled>
+              <span aria-hidden="true">▶</span>
+            </button>
+            <button class="icon-button" id="next" type="button" aria-label="Next song">↠</button>
+          </div>
+        </div>
+
+        <div class="queue" id="playlist-panel" aria-label="Song queue" aria-hidden="true">
+          <p class="queue-label">Pick a song</p>
+          <div class="queue-list" id="queue-list"></div>
+          <a id="youtube-link" href="https://music.youtube.com/watch?v=pU_Ei35MlpA" target="_blank" rel="noopener noreferrer">Open in YouTube Music ↗</a>
+        </div>
+      </section>
+
+      <section class="collaboration fluid-reactive" aria-labelledby="collaboration-title">
+        <p class="eyebrow">Open channel</p>
+        <h2 id="collaboration-title">Reach out for<br /><em>collaboration.</em></h2>
+        <div class="collaboration-links">
+          <a class="collaboration-link instagram-link" href="https://www.instagram.com/jatin_rajmusic/" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><defs><linearGradient id="instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffd861" /><stop offset="0.5" stop-color="#ed3b78" /><stop offset="1" stop-color="#7448d7" /></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5" fill="url(#instagram-gradient)" /><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="1.8" /><circle cx="17.4" cy="6.8" r="1.1" fill="white" /></svg>
+            <span>Instagram</span>
+          </a>
+          <a class="collaboration-link youtube-link" href="https://www.youtube.com/channel/UCXU-mDUOLcb5l2yxQtU75pQ/videos" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="#ff0033" d="M21.6 7.2a2.9 2.9 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.9 2.9 0 0 0-2 2A30 30 0 0 0 2 12a30 30 0 0 0 .4 4.8 2.9 2.9 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.9 2.9 0 0 0 2-2A30 30 0 0 0 22 12a30 30 0 0 0-.4-4.8Z" /><path fill="white" d="m10 15.5 5-3.5-5-3.5v7Z" /></svg>
+            <span>YouTube Music</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <div class="youtube-player-wrap" aria-hidden="true">
+      <div id="youtube-player"></div>
+      <div id="youtube-preloader"></div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
