@@ -114,7 +114,6 @@ function preloadNextSong() {
 }
 
 function setPlaying(isPlaying) {
-  playToggle.querySelector("span").textContent = isPlaying ? "❚❚" : "▶";
   playToggle.setAttribute("aria-label", `${isPlaying ? "Pause" : "Play"} ${songs[currentIndex].title}`);
   playerPanel.classList.toggle("is-playing", isPlaying);
   if (isPlaying) soundWave?.play?.();

@@ -83,6 +83,9 @@ input[type="range"]:disabled { cursor: wait; opacity: 0.55; }
 .icon-button { width: 2.25rem; height: 2.25rem; font-size: 1.25rem; }
 .icon-button svg { width: 1.15rem; height: 1.15rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
 .play-button { width: 2.75rem; height: 2.75rem; border-radius: 50%; color: #21170d; background: rgb(255 240 197 / 0.9); font-size: 1rem; transition: transform 180ms ease, background 180ms ease; }
+.play-button svg { width: 1rem; height: 1rem; fill: currentColor; }
+.pause-icon, .player-panel.is-playing .play-icon { display: none; }
+.player-panel.is-playing .pause-icon { display: block; }
 .play-button:hover:not(:disabled), .play-button:focus-visible { background: var(--amber); transform: scale(1.06); outline: none; }
 .icon-button:hover, .icon-button:focus-visible { color: var(--amber); outline: none; }
 .play-button:disabled { cursor: wait; opacity: 0.5; }
