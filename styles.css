@@ -139,6 +139,7 @@ body[data-theme="light"] .audio-waveform { filter: sepia(0.95) saturate(5) hue-r
   .intro { margin-inline: auto; text-align: center; }
   .intro > p:last-child { margin-inline: auto; }
   .header-controls { gap: 0.55rem; }
+  .site-header p { display: none; }
   .theme-toggle { display: inline-flex; align-items: center; justify-content: center; padding-inline: 0.5rem; }
   main { padding-bottom: 1rem; }
   .mobile-player-stack { display: grid; gap: 0.5rem; margin-top: auto; }
