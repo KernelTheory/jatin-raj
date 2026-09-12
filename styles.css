@@ -128,8 +128,8 @@ body[data-theme="light"] .eyebrow { color: #ffe394; text-shadow: 0 2px 5px rgb(2
 body[data-theme="light"] h1 { color: #fff5d7; text-shadow: 0 2px 5px rgb(20 9 1 / 0.88), 0 0 13px rgb(20 9 1 / 0.6); }
 body[data-theme="light"] h1 em { color: #e06a20; }
 body[data-theme="light"] .intro > p:last-child { color: #fff8df; font-weight: 700; text-shadow: 0 2px 5px rgb(20 9 1 / 0.88), 0 0 13px rgb(20 9 1 / 0.6); }
-body[data-theme="light"] .latest-release { color: #fff8df; text-shadow: 0 2px 5px rgb(20 9 1 / 0.88), 0 0 13px rgb(20 9 1 / 0.6); }
-body[data-theme="light"] .latest-release span, body[data-theme="light"] .latest-release b { color: #ffd266; }
+body[data-theme="light"] .latest-release { border: 1px solid #fff0c5; border-left: 3px solid #a7450a; border-radius: 0 0.7rem 0.7rem 0; padding: 0.55rem 0.8rem 0.55rem 0.7rem; color: #321709; background: #fff0c5; box-shadow: 0 0.4rem 1rem rgb(50 23 9 / 0.16); text-shadow: none; }
+body[data-theme="light"] .latest-release span, body[data-theme="light"] .latest-release b { color: #a7450a; }
 body[data-theme="light"] .player-panel { border-color: rgb(255 244 208 / 0.52); background: linear-gradient(135deg, rgb(91 49 13 / 0.34), rgb(180 104 20 / 0.24)); box-shadow: inset 0 1px 0 rgb(255 253 239 / 0.3), 0 0.7rem 2rem rgb(76 42 10 / 0.2); }
 body[data-theme="light"] .player-panel, body[data-theme="light"] .player-panel .artist, body[data-theme="light"] .player-panel .time, body[data-theme="light"] .player-panel .track-details .eyebrow span, body[data-theme="light"] .player-panel .icon-button { color: #fff6dc; text-shadow: 0 1px 4px rgb(24 11 2 / 0.9); }
 body[data-theme="light"] .player-panel .track-details .eyebrow { color: #ffd266; text-shadow: 0 1px 4px rgb(24 11 2 / 0.9); }

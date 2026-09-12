@@ -1,5 +1,5 @@
 const songs = [
-  { title: "Zara si ek baat", id: "EveW_3WtmPs", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=240&q=80" },
+  { title: "Zara si ek baat", id: "EveW_3WtmPs", art: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=240&q=80" },
   { title: "Andheri Si", id: "pU_Ei35MlpA", art: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=240&q=80" },
   { title: "Phir Se", id: "BhQ3LNHqnC8", art: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=240&q=80" },
   { title: "Ishq-e-Bazaar", id: "gbYTO8Ol67U", art: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=240&q=80" },
