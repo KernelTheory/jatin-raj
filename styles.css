@@ -52,12 +52,11 @@ h1, h2, p { margin-top: 0; }
 h1 { margin-bottom: 0.8rem; font-family: var(--display); font-size: clamp(3.8rem, 8vw, 6.7rem); font-weight: 400; letter-spacing: -0.075em; line-height: 0.78; }
 h1 em { color: var(--amber); font-weight: 400; }
 .intro > p:last-child { max-width: 280px; margin-bottom: 0; color: var(--faded); font-size: 0.96rem; line-height: 1.5; }
-.latest-release { display: inline-flex; align-items: baseline; gap: 0.5rem; margin-top: 1.35rem; border-bottom: 1px solid rgb(255 240 197 / 0.62); padding-bottom: 0.4rem; color: var(--cream); line-height: 1; text-decoration: none; transition: border-color 180ms ease, color 180ms ease; }
+.latest-release { display: grid; width: fit-content; gap: 0.3rem; margin-top: 1.65rem; border-left: 3px solid var(--amber); padding: 0.15rem 0 0.2rem 1rem; color: var(--cream); line-height: 1; text-decoration: none; transition: border-color 180ms ease, transform 180ms ease; }
 .latest-release span { color: var(--amber); font-family: var(--sans); font-size: 0.5rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
-.latest-release strong { font-family: var(--display); font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 400; letter-spacing: -0.02em; }
-.latest-release b { color: var(--amber); font-family: var(--sans); font-size: 0.9rem; transition: transform 180ms ease; }
-.latest-release:hover, .latest-release:focus-visible { border-color: var(--amber); color: var(--amber); outline: none; }
-.latest-release:hover b, .latest-release:focus-visible b { transform: translate(0.18rem, -0.18rem); }
+.latest-release strong { font-family: var(--display); font-size: clamp(1.55rem, 3vw, 2.4rem); font-weight: 400; letter-spacing: -0.035em; }
+.latest-release b { color: var(--amber); font-family: var(--sans); font-size: 0.55rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.latest-release:hover, .latest-release:focus-visible { border-color: var(--cream); outline: none; transform: translateX(0.25rem); }
 
 .player-panel { position: fixed; z-index: 4; bottom: clamp(1rem, 6vh, 5rem); left: 50%; width: min(calc(100% - 3rem), 576px); overflow: hidden; border: 1px solid rgb(255 240 197 / 0.24); border-radius: 999px; background: linear-gradient(135deg, rgb(255 240 197 / 0.13), rgb(18 11 6 / 0.28)); box-shadow: inset 0 1px 0 rgb(255 245 214 / 0.14), 0 0.7rem 2rem rgb(0 0 0 / 0.2); transform: translateX(-50%); }
 .mobile-player-stack { display: contents; }
@@ -130,8 +129,8 @@ body[data-theme="light"] .eyebrow { color: #ffe394; text-shadow: 0 2px 5px rgb(2
 body[data-theme="light"] h1 { color: #fff5d7; text-shadow: 0 2px 5px rgb(20 9 1 / 0.88), 0 0 13px rgb(20 9 1 / 0.6); }
 body[data-theme="light"] h1 em { color: #e06a20; }
 body[data-theme="light"] .intro > p:last-child { color: #fff8df; font-weight: 700; text-shadow: 0 2px 5px rgb(20 9 1 / 0.88), 0 0 13px rgb(20 9 1 / 0.6); }
-body[data-theme="light"] .latest-release { border-color: rgb(50 23 9 / 0.72); padding: 0 0 0.4rem; color: #321709; background: transparent; box-shadow: none; text-shadow: 0 1px 0 rgb(255 248 223 / 0.78); }
-body[data-theme="light"] .latest-release span, body[data-theme="light"] .latest-release b { color: #a7450a; }
+body[data-theme="light"] .latest-release { border-color: #ffd266; color: #fff8df; background: transparent; box-shadow: none; text-shadow: 0 2px 5px rgb(20 9 1 / 0.88), 0 0 13px rgb(20 9 1 / 0.6); }
+body[data-theme="light"] .latest-release span, body[data-theme="light"] .latest-release b { color: #ffe394; text-shadow: 0 2px 5px rgb(20 9 1 / 0.88), 0 0 13px rgb(20 9 1 / 0.6); }
 body[data-theme="light"] .player-panel { border-color: rgb(255 244 208 / 0.52); background: linear-gradient(135deg, rgb(91 49 13 / 0.34), rgb(180 104 20 / 0.24)); box-shadow: inset 0 1px 0 rgb(255 253 239 / 0.3), 0 0.7rem 2rem rgb(76 42 10 / 0.2); }
 body[data-theme="light"] .player-panel, body[data-theme="light"] .player-panel .artist, body[data-theme="light"] .player-panel .time, body[data-theme="light"] .player-panel .track-details .eyebrow span, body[data-theme="light"] .player-panel .icon-button { color: #fff6dc; text-shadow: 0 1px 4px rgb(24 11 2 / 0.9); }
 body[data-theme="light"] .player-panel .track-details .eyebrow { color: #ffd266; text-shadow: 0 1px 4px rgb(24 11 2 / 0.9); }
@@ -146,6 +145,7 @@ body[data-theme="light"] .audio-waveform { filter: sepia(0.95) saturate(5) hue-r
   main { min-height: calc(100svh - 3.75rem); padding-top: 3.5rem; }
   .intro { margin-inline: auto; text-align: center; }
   .intro > p:last-child { margin-inline: auto; }
+  .latest-release { margin-inline: auto; text-align: left; }
   .header-controls { gap: 0.55rem; }
   .theme-toggle { display: inline-flex; align-items: center; justify-content: center; padding-inline: 0.5rem; }
   main { padding-bottom: 1rem; }
